@@ -8,7 +8,14 @@ import (
 
 func main() {
 
-	prompt := cmd.GetUserInput()
+	var prompt string
+
+	if cmd.CheckFlag() {
+		prompt = cmd.ReadFlag()
+	} else {
+		prompt = cmd.GetUserInput()
+	}
+
 	answer := API.APIrequest(prompt)
 
 	fmt.Println(answer)

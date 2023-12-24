@@ -2,11 +2,10 @@ package cmd
 
 import (
 	"fmt"
-
 	"github.com/chzyer/readline"
 )
 
-func GetUserInput() (answer string) {
+func GetUserInput() (prompt string) {
 
 	rl, err := readline.New("> ")
 	if err != nil {
@@ -16,10 +15,10 @@ func GetUserInput() (answer string) {
 		_ = rl.Close()
 	}()
 
-	answer, err = rl.Readline()
+	prompt, err = rl.Readline()
 	if err != nil {
 		fmt.Println("Error:", err)
 	}
 
-	return answer
+	return prompt
 }

@@ -19,27 +19,51 @@ Given that the GPT 3.5 model is already a notable increase, this is the chosen w
 > This needs to be checked, but in case the way to communicate with the API of a different model doesn't differ too much, this tool can be forked and adapted.
 > Best case, only the API key can be changed appropriately.
 
-## Usage
-
-The main goal of this tool is to be used as a CLI tool, meaning you don't have to leave the terminal/IDE to use ChatGPT. It can, and will, however, be integrated into further workflows:
-
-- Use it as a backend for your web application
-- Extend the interactive part with your own code/tool
-- Integrate it into existing tools
-- etc.
-
 ## Installation
 
-### Clone the repository
+### API key
+
+Before starting to use the tool, you need to get yourself an OpenAPI API key - that can be done [here](https://openai.com/product).
+
+With your API key at hand, you need to set up the config file, in which to store it:
+
+```bash
+cd Prompt
+ echo "api_key: <your key>" > config.yaml 
+```
+
+Note that by adding a whitespace before the echo command, your command will not appear in your shell history - this is recommended, given the use of an API key.
+If you prefer, you can also use any editor/IDE to create the `config.yaml`file and input your key into it. The only relevant thing is that it looks as follows:
+
+```yaml
+api_key: <your key>
+```
+
+### Building the binary
+
+Run the following to clone the repository, build and move the binary:
 
 ```bash
 git clone https://github.com/patrick-men/GoGPT.git
+cd GoGPT
+go build 
+cp GoGPT /usr/local/bin
 ```
 
-### Binary
+With this done, you simply need to restart your shell by running `zsh`, `bash`, `sh` or whichever shell you're using.
 
-Install the binary from the release, and then move it to the binary directory:
+Now that you have the binary, you can use the binary with flags, or interactively:
+
+#### Flags
+
+To use the binary with flags, simply add your prompt after the binary:
 
 ```bash
-mv <> /usr/local/bin
+GoGPT "your prompt here"
 ```
+
+This is recommended in cases, where you want to implement the tool into any automation, such as other tools.
+
+#### Interactive
+
+To run the tool interctively, you simply need to call it with `GoGPT`, and then write your prompt. 
