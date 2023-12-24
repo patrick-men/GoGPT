@@ -68,9 +68,23 @@ This is recommended in cases, where you want to implement the tool into any auto
 
 To run the tool interctively, you simply need to call it with `GoGPT`, and then write your prompt. 
 
-## Use different Model
+## Using a different Model
 
 The default model is GPT3.5 Turbo. If you want to use another model, you can find the possible models [here](https://github.com/sashabaranov/go-openai/blob/a09cb0c528c110a6955a9ee9a5d021a57ed44b90/completion.go#L20).
 
-If you want to change it, you simply need to change the values to the corresponding model in this line here:
-![](https://github.com/patrick-men/GoGPT/blob/5b1ee4e571bd1dbea246905bde71caaa94434403/Prompt/api.go#L40)
+If you want to change it, you simply need to change the values to the corresponding model in this line of the `Prompt/api.go` file:
+
+```golang
+[...]
+		openai.ChatCompletionRequest{
+			Model: openai.GPT3Dot5Turbo, //This line
+			Messages: []openai.ChatCompletionMessage{
+				{
+					Role:    openai.ChatMessageRoleUser,
+					Content: prompt,
+				},
+			},
+		},
+	)
+[...]
+```
