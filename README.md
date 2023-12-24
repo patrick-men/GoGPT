@@ -19,6 +19,7 @@ Given that the GPT 3.5 model is already a notable increase, this is the chosen w
 > This needs to be checked, but in case the way to communicate with the API of a different model doesn't differ too much, this tool can be forked and adapted.
 > Best case, only the API key can be changed appropriately.
 
+
 ## Installation
 
 ### API key
@@ -39,6 +40,8 @@ If you prefer, you can also use any editor/IDE to create the `config.yaml`file a
 api_key: <your key>
 ```
 
+---
+
 ### Building the binary
 
 Run the following to clone the repository, build and move the binary:
@@ -54,6 +57,8 @@ With this done, you simply need to restart your shell by running `zsh`, `bash`, 
 
 Now that you have the binary, you can use the binary with flags, or interactively:
 
+---
+
 #### Flags
 
 To use the binary with flags, simply add your prompt after the binary:
@@ -63,6 +68,8 @@ GoGPT "your prompt here"
 ```
 
 This is recommended in cases, where you want to implement the tool into any automation, such as other tools.
+
+---
 
 #### Interactive
 
