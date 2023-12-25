@@ -19,6 +19,7 @@ Given that the GPT 3.5 model is already a notable increase, this is the chosen w
 > This needs to be checked, but in case the way to communicate with the API of a different model doesn't differ too much, this tool can be forked and adapted.
 > Best case, only the API key can be changed appropriately.
 
+Source: [OpenAI API Pricing](https://openai.com/pricing)
 
 ## Installation
 
